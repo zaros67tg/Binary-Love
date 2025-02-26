@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=800, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viraj K</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,20 +21,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0"></script>
     <script defer src="script.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const noButton = document.getElementById('no');
             const yesButton = document.getElementById('yes');
             
+            // "No" button shakes & spawns evil faces
             noButton.addEventListener('mouseenter', function () {
                 noButton.classList.add('shake');
                 generateEvilFaces();
             });
-            
+
             noButton.addEventListener('mouseleave', function () {
                 noButton.classList.remove('shake');
             });
-            
+
+            // "Yes" button triggers confetti & music
             yesButton.addEventListener('click', function () {
                 alert('Yay! Can’t wait for our date! ❤️');
                 confetti();
@@ -54,7 +56,7 @@
                     
                     evilFace.style.left = `${x}px`;
                     evilFace.style.top = `${y}px`;
-                    
+
                     setTimeout(() => {
                         evilFace.remove();
                     }, 1000);

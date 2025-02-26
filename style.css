@@ -1,83 +1,89 @@
-/* General Page Styling */
+/* General styles */
 body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffeff0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(246, 170, 181);
-    font-family: Arial, sans-serif;
     height: 100vh;
-    margin: 0;
-    text-align: center;
 }
 
-/* White Rounded Box */
+/* Centering the content */
 .content-box {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
 }
 
-/* Heading */
-h1 {
-    font-size: 2em;
-    color: red;
+/* Buttons styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }
 
-/* Button Styling */
 button {
+    font-size: 18px;
     padding: 10px 20px;
-    font-size: 1.2em;
     margin: 10px;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-/* Yes Button */
 #yes {
-    background-color: rgb(195, 247, 195);
-}
-
-/* No Button */
-#no {
-    background-color: lightcoral;
+    background-color: #ff4081;
     color: white;
-    position: relative;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Shaking Animation */
-@keyframes shake {
-    0% { transform: translate(0px, 0px); }
-    25% { transform: translate(-5px, 5px); }
-    50% { transform: translate(5px, -5px); }
-    75% { transform: translate(-5px, -5px); }
-    100% { transform: translate(5px, 5px); }
+#yes:hover {
+    background-color: #e91e63;
+}
+
+#no {
+    background-color: #ccc;
+    color: black;
+}
+
+#no:hover {
+    background-color: #bbb;
+}
+
+/* Evil face animation */
+.evil-face {
+    position: absolute;
+    font-size: 30px;
+    transition: transform 0.3s ease;
 }
 
 .shake {
-    animation: shake 0.2s infinite;
+    animation: shake 0.3s infinite;
 }
 
-/* Evil Face Emoji Animation */
-.evil-face {
-    position: absolute;
-    font-size: 2rem;
-    animation: fly 1s linear;
-    pointer-events: none;
+/* Shake animation */
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(5px, 0); }
 }
 
-@keyframes fly {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(2); opacity: 0; }
-}
+/* Mobile responsive fix */
+@media screen and (max-width: 600px) {
+    .content-box {
+        width: 95%;
+    }
 
-/* Footer Styling */
-footer {
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    font-size: 14px;
+    button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
 }
